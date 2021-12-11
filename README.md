@@ -25,7 +25,7 @@ naming the to-be-merged file:
 
 listed files for merger confirmation, click OK:
 
-![image](https://user-images.githubusercontent.com/39832806/145681781-2fb01b08-b829-404e-abaf-bf8535cc4fa3.png)
+![image](https://user-images.githubusercontent.com/39832806/145682802-0b6c4494-bc0e-4f08-b472-242c29fb9a84.png)
 
 
 
