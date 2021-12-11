@@ -32,20 +32,26 @@ OUTPUT_FILEPATH = os.path.join(FOLDER, (OUTPUT_FILE_NAME + '.pdf'))
  
 # Get all pdf files in folder 
 pdf_files = [] 
+
 for file in os.listdir(FOLDER): 
     if file.endswith(".pdf"): 
         if OUTPUT_FILE_NAME not in file:  
             pdf_files.append(os.path.join(FOLDER, file)) 
+            
          
-         
+number_of_files = str(len(pdf_files))
+pdf_files_copy = pdf_files.copy()
+pdf_files_copy_formated = '\n'.join(pdf_files_copy)
 # Start merging files according to list order 
 print('Merging files in the following order:') 
-sg.popup_scrolled(pdf_files, title='Confirm file merger?')
-print(pdf_files) 
+sg.popup_scrolled('You have chosen to merge ' + number_of_files + ' files listed below:', pdf_files_copy_formated, title='Confirm file merger?')
+
+print(*pdf_files, sep = "\n")
 merger = PdfFileMerger(strict=False) 
 for pdf in pdf_files: 
     merger.append(pdf) 
- 
+    
+    
 # Save merged file 
 merger.write(OUTPUT_FILEPATH) 
 merger.close() 
