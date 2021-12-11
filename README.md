@@ -38,3 +38,7 @@ popup upon successful merger:
 merged file added to folder:
 
 ![image](https://user-images.githubusercontent.com/39832806/145681843-50ba36a5-8f18-4ead-aeb3-7bb2e570d4e0.png)
+
+
+
+Have fun merging!
