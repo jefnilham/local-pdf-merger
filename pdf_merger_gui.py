@@ -28,7 +28,9 @@ print('You entered', values[0], values[1])
 # Declare global vars 
 FOLDER = values[0]
 OUTPUT_FILE_NAME = values[1]
-OUTPUT_FILEPATH = os.path.join(FOLDER, (OUTPUT_FILE_NAME + '.pdf')) 
+if OUTPUT_FILE_NAME.endswith('.pdf') == False: 
+    OUTPUT_FILE_NAME = OUTPUT_FILE_NAME + '.pdf'
+OUTPUT_FILEPATH = os.path.join(FOLDER, OUTPUT_FILE_NAME) 
  
 # Get all pdf files in folder 
 pdf_files = [] 
