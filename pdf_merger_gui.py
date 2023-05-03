@@ -5,7 +5,7 @@ Created on Sat Dec 11 20:02:37 2021
 @author: jefni
 """
 import PySimpleGUI as sg # adapted from https://pysimplegui.readthedocs.io/en/latest/
-from PyPDF2 import PdfFileMerger 
+from PyPDF2 import PdfMerger 
 import os 
 
 sg.theme('Dark Blue 2')   # Add a touch of color
@@ -39,7 +39,9 @@ for file in os.listdir(FOLDER):
     if file.endswith(".pdf"): 
         if OUTPUT_FILE_NAME not in file:  
             pdf_files.append(os.path.join(FOLDER, file)) 
-            
+ 
+# Sort alphabetically 
+pdf_files = sorted(pdf_files)
          
 number_of_files = str(len(pdf_files))
 pdf_files_copy = pdf_files.copy()
@@ -49,7 +51,7 @@ print('Merging files in the following order:')
 sg.popup_scrolled('You have chosen to merge ' + number_of_files + ' files listed below:', pdf_files_copy_formated, title='Confirm file merger?')
 
 print(*pdf_files, sep = "\n")
-merger = PdfFileMerger(strict=False) 
+merger = PdfMerger(strict=False) 
 for pdf in pdf_files: 
     merger.append(pdf) 
     
