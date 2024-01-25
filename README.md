@@ -1,44 +1,53 @@
-# local-pdf-merger
-to merge pdf locally
+# PDF Merger Script
 
-update on 11 dec 2021: included gui for ease of use using mainly PySimpleGUI (https://pysimplegui.readthedocs.io/en/latest/)
+This Python script uses PySimpleGUI and PyPDF2 to merge multiple PDF files into a single PDF file.
 
+## Prerequisites
 
+Make sure you have the following libraries installed:
 
-executing the script:
+- PySimpleGUI
+- PyPDF2
 
-![image](https://user-images.githubusercontent.com/39832806/145681719-c7db3d75-ee28-45bb-9c1c-218279d54780.png)
+You can install them using the following command:
 
+```bash
+pip install PySimpleGUI PyPDF2
+```
 
+## Running the Script (GUI)
 
-clicking on browse and choosing folder:
+1. Run the script using the following command:
 
-![image](https://user-images.githubusercontent.com/39832806/145681731-a4906bcd-a4f6-44d3-8550-d53ca909577f.png)
+   ```bash
+   ./pdf_merger_gui.py
+   ```
 
+2. The script will prompt you to select a folder containing PDF files to merge.
 
+3. Enter the desired filename for the merged PDF file.
 
-naming the to-be-merged file:
+4. Click on the "OK" button to start the merging process.
 
-![image](https://user-images.githubusercontent.com/39832806/145681751-ee31893c-9fe6-45eb-980b-30c9c974ab4f.png)
+## Running the Script (CLI)
 
+1. The script will use the predefined folder path (`FOLDER`) and output filename (`OUTPUT_FILE_NAME`) to merge PDF files. Ensure to customize these variables in the script according to your requirements.
 
+2. Open a terminal or command prompt.
 
-listed files for merger confirmation, click OK:
+3. Execute the script using the following command:
 
-![image](https://user-images.githubusercontent.com/39832806/145682802-0b6c4494-bc0e-4f08-b472-242c29fb9a84.png)
+   ```bash
+   ./mergepdfs.py
+   ```
 
+4. The merged PDF file will be saved in the specified folder with the specified filename.
 
+## Important Notes
 
-popup upon successful merger:
-
-![image](https://user-images.githubusercontent.com/39832806/145681802-9f25bd5c-f75c-4a46-832b-71525acf51d5.png)
-
-
-
-merged file added to folder:
-
-![image](https://user-images.githubusercontent.com/39832806/145681843-50ba36a5-8f18-4ead-aeb3-7bb2e570d4e0.png)
-
-
-
-Have fun merging!
+- The script can only select PDF Files in an selected Folder
+- The PDF order will be based on the filename
+- The script will not check if the selected folder contains PDF files or not
+- The script runs as intended when the selected folder contains other files (e.g. images, text files, etc.) as long as there are PDF files in the folder
+- The merged PDF file will be saved in the selected folder with the specified filename
+- If the exported PDF file has the same filename as an existing file in the selected folder, nothing will happen
